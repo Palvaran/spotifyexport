@@ -17,23 +17,6 @@ Two files are included in this repo.
 Example Output:  
 Playlist Name: Your Top Songs 2022
 Number of Tracks: 101
---------------------------------------------------
-Playlist Name: Your Top Songs 2021
-Number of Tracks: 100
---------------------------------------------------
-Playlist Name: Your Top Songs 2020
-Number of Tracks: 100
---------------------------------------------------
-Playlist Name: Your Top Songs 2019
-Number of Tracks: 100
---------------------------------------------------
-Playlist Name: Your Top Songs 2018
-Number of Tracks: 100
---------------------------------------------------
-Playlist Name: Your Top Songs 2017
-Number of Tracks: 100
---------------------------------------------------
-Playlist Name: Your Top Songs 2016
-Number of Tracks: 101
+
 
 Feel free to branch off and get this to import into other services.
