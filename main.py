@@ -6,9 +6,9 @@ from spotipy.oauth2 import SpotifyOAuth
 from requests.exceptions import ReadTimeout
 
 # Setup Spotify API
-client_id = 'e95f5f0609f444bfa19619296836bfba'
-client_secret = '0418290fbfe5429a9e91f3bb9ce9cddc'
-redirect_uri = 'http://localhost:3000'
+client_id = 'your-spotify-client-id'
+client_secret = 'your-spotify-client-secret'
+redirect_uri = 'your-spotify-redirect-uri'
 scope = 'playlist-read-private'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope))
