@@ -1,3 +1,4 @@
+import csv
 import json
 import spotipy
 import time
@@ -5,9 +6,9 @@ from spotipy.oauth2 import SpotifyOAuth
 from requests.exceptions import ReadTimeout
 
 # Setup Spotify API
-client_id = 'your-spotify-client-id'
-client_secret = 'your-spotify-client-secret'
-redirect_uri = 'your-spotify-redirect-uri'
+client_id = 'e95f5f0609f444bfa19619296836bfba'
+client_secret = '0418290fbfe5429a9e91f3bb9ce9cddc'
+redirect_uri = 'http://localhost:3000'
 scope = 'playlist-read-private'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope))
@@ -79,3 +80,19 @@ for playlist in playlist_response:
 # Save to a JSON file
 with open(r'C:\temp\spotifyuser.json', 'w') as f:
     json.dump(all_playlists, f)
+
+# Save to a CSV file
+with open(r'C:\temp\spotifyuser.csv', 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    # Write the header
+    writer.writerow(['Playlist Name', 'Track Name', 'Artists', 'Duration (s)', 'Popularity'])
+    # Write the data
+    for playlist in all_playlists:
+        for track in playlist['tracks']:
+            writer.writerow([
+                playlist['name'],
+                track['name'],
+                ', '.join(track['artists'] if track['artists'] else []),
+                track['duration_ms'] / 1000,  # convert to seconds
+                track['popularity']
+            ])
