@@ -15,8 +15,8 @@ Note, the Spotify Developer Account will provide the API client secret and ID ne
 ------------------------------------------------------------------------------------------------------------------
 
 Two files are included in this repo.
-1. playlistexport.py - Queries the Spotify API for your playlist information.  Just update the API portion (lines 8 and 9) with your Spotify Developer information.
-2. viewjson.py - For verification.  Reports the track count for Query.
+1. playlistexport.py - Queries the Spotify API for your playlist information.  Just update the API portion (lines 8 and 9) with your Spotify Developer information.  Outputs the query as a CSV which can be analyzed further.
+2. viewjson.py - For troubleshooting/verification.  Reports the track count for Query.
 
 Example Output:  
 playlist_name,	track_name,	artist_name,	album_name,	duration_s,	popularity
