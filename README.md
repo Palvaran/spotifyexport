@@ -19,8 +19,8 @@ Two files are included in this repo.
 2. viewjson.py - For verification.  Reports the track count for Query.
 
 Example Output:  
-playlist_name	track_name	artist_name	album_name	duration_s	popularity
-FAVrite JAMs	1.3_5-da3m0nsneverstop.caf	Mac Quayle	Mr. Robot, Vol. 1 (Original Television Series Soundtrack)	130.404	38
+playlist_name,	track_name,	artist_name,	album_name,	duration_s,	popularity
+FAVrite JAMs,	1.3_5-da3m0nsneverstop.caf,	Mac Quayle,	Mr. Robot, Vol. 1 (Original Television Series Soundtrack),	130.404,	38
 
 
 ------------------------------------------------------------------------------------------------------------------
