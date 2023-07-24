@@ -52,6 +52,7 @@ for playlist in playlist_response:
         track_info['name'] = item['track']['name']
         track_info['artists'] = [artist['name'] for artist in item['track']['artists']]
         track_info['album'] = item['track']['album']['name']
+        track_info['release_date'] = item['track']['album']['release_date']  # add release date
         track_info['duration_ms'] = item['track']['duration_ms'] / 1000
         track_info['popularity'] = item['track']['popularity']
 
@@ -64,6 +65,7 @@ for playlist in playlist_response:
             'track_name': track_info['name'],
             'artist_name': ', '.join(track_info['artists']),
             'album_name': track_info['album'],
+            'release_date': track_info['release_date'],  # add release date to CSV
             'duration_s': track_info['duration_ms'],
             'popularity': track_info['popularity']
         })
