@@ -14,13 +14,16 @@ Note, the Spotify Developer Account will provide the API client secret and ID ne
 
 ------------------------------------------------------------------------------------------------------------------
 
-Two files are included in this repo.
+Three files are included in this repo.
 1. playlistexport.py - Queries the Spotify API for your playlist information.  Just update the API portion (lines 8 and 9) with your Spotify Developer information.  Outputs the query as a CSV which can be analyzed further.
-2. viewjson.py - For troubleshooting/verification.  Reports the track count for Query.
+2. addgenres.py - Queries the artist information and appends the CSV for genres.
+3. viewjson.py - For troubleshooting/verification.  Reports the track count for Query.
 
 Example Output:  
-playlist_name,	track_name,	artist_name,	album_name,  release_date, duration_s,	popularity
+playlistexport.py:  playlist_name,	track_name,	artist_name,	album_name,  release_date, duration_s,	popularity
 FAVrite JAMs,	1.3_5-da3m0nsneverstop.caf,	Mac Quayle,	Mr. Robot, Vol. 1 (Original Television Series Soundtrack),  6/3/2016,  130.404,	38
+addgenres.py:  playlist_name,	track_name,	artist_name,	album_name,  release_date, duration_s,	popularity, genres
+FAVrite JAMs,	1.3_5-da3m0nsneverstop.caf,	Mac Quayle,	Mr. Robot, Vol. 1 (Original Television Series Soundtrack),  6/3/2016,  130.404,	38, soundtrack
 
 
 ------------------------------------------------------------------------------------------------------------------
