@@ -56,19 +56,34 @@ for playlist in playlist_response:
         track_info['duration_ms'] = item['track']['duration_ms'] / 1000
         track_info['popularity'] = item['track']['popularity']
 
+        if item['track']['id']:  # Check if track id is not None
+            audio_features = sp.audio_features([item['track']['id']])  # Fetch audio features for the track
+            if audio_features and audio_features[0]:  # If audio features are found
+                for key in audio_features[0]:  # For each audio feature
+                    track_info[key] = audio_features[0][key]  # Add audio feature to track info
+
         # Add track info to playlist info
         playlist_info['tracks'].append(track_info)
 
-        # Add row to csv_data
-        csv_data.append({
+        # Prepare row for csv_data
+        csv_row = {
             'playlist_name': playlist['name'],
             'track_name': track_info['name'],
             'artist_name': ', '.join(track_info['artists']),
             'album_name': track_info['album'],
             'release_date': track_info['release_date'],  # add release date to CSV
             'duration_s': track_info['duration_ms'],
-            'popularity': track_info['popularity']
-        })
+            'popularity': track_info['popularity'],
+        }
+        # Add audio features to csv_row
+        for key in track_info:
+            if key not in csv_row:  # Skip keys that are already in csv_row
+                csv_row[key] = track_info[key]
+
+        # Add row to csv_data
+        csv_data.append(csv_row)
+
+        time.sleep(1)  # delay to avoid rate limit
 
     all_playlists.append(playlist_info)
 
